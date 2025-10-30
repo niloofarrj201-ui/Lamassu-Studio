@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ServiceCard } from './components/ServiceCard';
 import { InstagramIcon } from './components/InstagramIcon';
 import { Header } from './components/Header';
@@ -16,89 +16,6 @@ const services = [
 ];
 
 const App: React.FC = () => {
-  const [isKeySelected, setIsKeySelected] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const checkApiKey = async () => {
-      // The `window.aistudio` object is provided by the execution environment.
-      if (window.aistudio && typeof window.aistudio.hasSelectedApiKey === 'function') {
-        const hasKey = await window.aistudio.hasSelectedApiKey();
-        setIsKeySelected(hasKey);
-      } else {
-        console.warn('AI Studio context not found. Assuming local development.');
-        // For local dev, you might want to bypass this check.
-        // Here, we default to showing the key selector if the context is missing.
-      }
-      setIsLoading(false);
-    };
-
-    checkApiKey();
-  }, []);
-
-  const handleSelectKey = async () => {
-    if (window.aistudio && typeof window.aistudio.openSelectKey === 'function') {
-      await window.aistudio.openSelectKey();
-      // Per guidelines, assume selection is successful to avoid race conditions
-      // and immediately render the app.
-      setIsKeySelected(true);
-    }
-  };
-
-  if (isLoading) {
-    return (
-      <div 
-        className="flex items-center justify-center min-h-screen w-full"
-        style={{ backgroundColor: '#46236A' }}
-      >
-        <div className="text-center text-white">
-          <svg className="animate-spin h-8 w-8 text-white mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <p className="font-display text-2xl">در حال بارگذاری...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isKeySelected) {
-    return (
-       <div 
-        className="relative min-h-screen w-full flex items-center justify-center p-4"
-        style={{
-          backgroundColor: '#46236A',
-          backgroundImage: "url('/images/pattern.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <div className="relative z-20 text-center text-white p-8 max-w-lg mx-auto bg-black/40 backdrop-blur-sm rounded-xl border border-amber-200/30 animate-fade-in-up">
-          <h1 className="font-display text-4xl text-amber-50 mb-4">
-            تنظیم کلید API
-          </h1>
-          <p className="text-white/80 mb-6 leading-relaxed">
-            برای استفاده از قابلیت‌های هوش مصنوعی این برنامه، لطفاً کلید Gemini API خود را انتخاب کنید.
-          </p>
-          <button 
-            onClick={handleSelectKey}
-            className="w-full flex-shrink-0 flex items-center justify-center gap-2 px-8 py-3 bg-amber-500 hover:bg-amber-600 rounded-full text-purple-900 font-bold transition-all transform hover:scale-105 shadow-lg"
-          >
-            انتخاب کلید Gemini API
-          </button>
-          <p className="text-xs text-white/60 mt-4">
-            با ادامه، شما با شرایط استفاده و صورت‌حساب مربوط به استفاده از API موافقت می‌کنید. 
-            <a href="https://ai.google.dev/gemini-api/docs/billing" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">
-              اطلاعات بیشتر درباره صورت‌حساب
-            </a>
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div 
       className="relative min-h-screen w-full"
