@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lamassu Studio</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>استودیو لاماسو | عکاسی، فیلمبرداری و تولید محتوای خلاقانه</title>
+    <meta name="description" content="استودیو لاماسو با مدیریت نیلوفر رجبی، ارائه‌دهنده خدمات حرفه‌ای عکاسی، فیلمبرداری، ساخت تیزرهای تبلیغاتی و تولید محتوا برای شبکه‌های اجتماعی. با ما بزرگ فکر کنید و دیده شوید." />
+    <meta name="keywords" content="استودیو عکاسی, فیلمبرداری, تیزر تبلیغاتی, تولید محتوا, لاماسو, نیلوفر رجبی, عکاسی صنعتی, عکاسی پرتره, شاهین شهر" />
+    <link rel="canonical" href="https://lamassu.studio/" /> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lamassu.studio/" /> <!-- Replace with your actual domain -->
+    <meta property="og:title" content="استودیو لاماسو | عکاسی، فیلمبرداری و تولید محتوای خلاقانه" />
+    <meta property="og:description" content="خدمات حرفه‌ای عکاسی، فیلمبرداری و تولید محتوا برای برندها و افراد. با استودیو لاماسو داستان خود را به تصویر بکشید." />
+    <meta property="og:image" content="/images/social-preview.png" /> <!-- Add a social preview image to your public folder -->
+    <meta property="og:site_name" content="Lamassu Studio" />
+    <meta property="og:locale" content="fa_IR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://lamassu.studio/" /> <!-- Replace with your actual domain -->
+    <meta property="twitter:title" content="استودیو لاماسو | عکاسی، فیلمبرداری و تولید محتوای خلاقانه" />
+    <meta property="twitter:description" content="خدمات حرفه‌ای عکاسی، فیلمبرداری و تولید محتوا برای برندها و افراد. با استودیو لاماسو داستان خود را به تصویر بکشید." />
+    <meta property="twitter:image" content="/images/social-preview.png" /> <!-- Add a social preview image to your public folder -->
+
+    <!-- Performance and Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap');
       html {
         scroll-behavior: smooth;
       }
@@ -44,7 +69,53 @@
           animation: fade-in-up 0.8s ease-out forwards;
           opacity: 0;
       }
+      /* For hiding labels accessibly */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
     </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PhotographyStudio",
+      "name": "Lamassu Studio",
+      "description": "استودیو لاماسو، با مدیریت نیلوفر رجبی، ارائه‌دهنده خدمات حرفه‌ای عکاسی، فیلم‌سازی، ساخت تیزرهای تبلیغاتی و تولید محتوای خلاقانه برای شبکه‌های اجتماعی است.",
+      "telephone": "+989123456789",
+      "email": "contact@lamassu.studio",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "شاهین شهر",
+        "addressCountry": "IR"
+      },
+      "url": "https://lamassu.studio/",
+      "sameAs": [
+        "https://www.instagram.com/lamassu_studio/",
+        "https://wa.me/+989123456789"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "نیلوفر رجبی"
+      },
+      "servesCuisine": [],
+      "priceRange": "$$",
+      "image": "/images/social-preview.png",
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "عکاسی" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "فیلمبرداری" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "تیزرهای تبلیغاتی" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "تولید محتوا" } }
+      ]
+    }
+    </script>
   <script type="importmap">
 {
   "imports": {

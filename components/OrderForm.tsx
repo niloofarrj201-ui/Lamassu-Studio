@@ -62,15 +62,17 @@ export const OrderForm: React.FC = () => {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {/* Name Input */}
                                     <div className="relative">
-                                        <input type="text" placeholder="نام و نام خانوادگی" required className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow text-gray-700"/>
-                                        <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400">
+                                        <label htmlFor="fullName" className="sr-only">نام و نام خانوادگی</label>
+                                        <input id="fullName" name="fullName" type="text" placeholder="نام و نام خانوادگی" required className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow text-gray-700"/>
+                                        <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 pointer-events-none">
                                             <UserIcon className="w-5 h-5"/>
                                         </span>
                                     </div>
                                     {/* Phone Input */}
                                     <div className="relative">
-                                        <input type="tel" placeholder="شماره همراه" required className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow text-gray-700"/>
-                                        <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400">
+                                        <label htmlFor="phoneNumber" className="sr-only">شماره همراه</label>
+                                        <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="شماره همراه" required className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow text-gray-700"/>
+                                        <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 pointer-events-none">
                                             <PhoneIcon className="w-5 h-5"/>
                                         </span>
                                     </div>
@@ -78,7 +80,8 @@ export const OrderForm: React.FC = () => {
 
                                 {/* Package Select */}
                                 <div className="relative">
-                                    <select required className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow appearance-none text-gray-700 cursor-pointer">
+                                    <label htmlFor="package" className="sr-only">انتخاب پکیج</label>
+                                    <select id="package" name="package" required className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow appearance-none text-gray-700 cursor-pointer">
                                         <option value="">انتخاب پکیج</option>
                                         <option>عکاسی</option>
                                         <option>فیلمبرداری</option>
@@ -95,8 +98,9 @@ export const OrderForm: React.FC = () => {
                                 
                                 {/* Description Textarea */}
                                 <div className="relative">
-                                    <textarea placeholder="توضیحات سفارش" rows={4} className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow resize-none text-gray-700"></textarea>
-                                    <span className="absolute top-3 right-0 flex items-center pr-4 text-gray-400">
+                                    <label htmlFor="description" className="sr-only">توضیحات سفارش</label>
+                                    <textarea id="description" name="description" placeholder="توضیحات سفارش" rows={4} className="w-full pl-4 pr-12 py-3 bg-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-shadow resize-none text-gray-700"></textarea>
+                                    <span className="absolute top-3 right-0 flex items-center pr-4 text-gray-400 pointer-events-none">
                                         <PencilIcon className="w-5 h-5"/>
                                     </span>
                                 </div>
@@ -104,7 +108,7 @@ export const OrderForm: React.FC = () => {
                                 {/* Submit Button */}
                                 <div className="flex justify-end items-center pt-2">
                                     <span className="text-gray-600 mr-4 font-semibold">ارسال پیام</span>
-                                    <button type="submit" className="w-14 h-14 bg-purple-600 hover:bg-purple-700 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-110 shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                    <button type="submit" aria-label="ارسال سفارش" className="w-14 h-14 bg-purple-600 hover:bg-purple-700 rounded-full text-white flex items-center justify-center transition-transform transform hover:scale-110 shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                         <ArrowLeftIcon className="w-6 h-6"/>
                                     </button>
                                 </div>
